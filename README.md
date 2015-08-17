@@ -1,13 +1,13 @@
-# ghchecklist
+# ghtasklist
 
-**ghchecklist** is a small utility to automatically prefix lines in order to
+**ghtasklist** is a small utility to automatically prefix lines in order to
 format them as [Github task lists][1].
 
 [1]: https://github.com/blog/1375%0A-task-lists-in-gfm-issues-pulls-comments
 
 ## Install
 
-    go get github.com/bfontaine/ghchecklist
+    go get github.com/bfontaine/ghtasklist
 
 ## Usage
 
@@ -16,7 +16,7 @@ format them as [Github task lists][1].
     is
     the
     result
-    $ ghchecklist < my-input
+    $ ghtasklist < my-input
     - [ ] this
     - [ ] is
     - [ ] the

@@ -1,5 +1,5 @@
-// Package ghchecklist provides utilities to work with GitHub's checklists
-package ghchecklist
+// Package ghtasklists provides utilities to work with GitHub's task lists
+package ghtasklists
 
 import (
 	"bufio"
@@ -15,7 +15,8 @@ var eol = []byte("\n")
 // text. It does not close the reader.
 //
 // The resulting text will be the same as the input except that each line will
-// be prefixed with "- [ ] " in order to be parsed by GitHub as a list item.
+// be prefixed with "- [ ] " in order to be parsed by GitHub's Markdown parser
+// as a task list item.
 func Transform(r io.Reader) (string, error) {
 	var buf bytes.Buffer
 

@@ -17,14 +17,19 @@ var eol = []byte("\n")
 // The resulting text will be the same as the input except that each line will
 // be prefixed with "- [ ] " in order to be parsed by GitHub's Markdown parser
 // as a task list item.
+// Empty lines are skipped, and the output always ends with a newline.
 func Transform(r io.Reader) (string, error) {
 	var buf bytes.Buffer
 
 	sc := bufio.NewScanner(r)
 
 	for sc.Scan() {
+		line := sc.Bytes()
+		if len(line) == 0 {
+			continue
+		}
 		buf.Write(linePrefix)
-		buf.Write(sc.Bytes())
+		buf.Write(line)
 		buf.Write(eol)
 	}
 
